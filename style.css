@@ -1,0 +1,781 @@
+:root {
+    --nasa-gold: #F5C400;
+    --deep-space: #02040a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at center, #0B0D17 0%, var(--deep-space) 100%);
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Star Styles */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+#star-container {
+    position: fixed;
+    /* This locks the stars to the viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    /* Keeps stars behind all your content */
+    pointer-events: none;
+    /* Allows you to click through the stars */
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* --- UPDATED HERO SECTION --- */
+#hero-control {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(245, 196, 0, 0.2);
+    position: relative;
+    /* Essential to center the image */
+}
+
+/* Huge background image */
+.hero-image-deploy {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vw;
+    /* Takes up most of the screen width */
+    max-width: 1600px;
+    object-fit: contain;
+    opacity: 0.45;
+    /* Subtle and in background */
+    z-index: 1;
+    /* Behind text and buttons */
+    filter: drop-shadow(0 0 50px rgba(245, 196, 0, 0.6));
+    animation: rotateSlowlyCenter 120s linear infinite;
+    /* Slower rotation */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Text and buttons are on top */
+}
+
+.main-title {
+    font-size: 3.5rem;
+    color: var(--nasa-gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px rgba(245, 196, 0, 0.5);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+}
+
+/* Mission Module Buttons */
+.mission-modules {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.module-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    min-width: 180px;
+    transition: all 0.3s ease;
+}
+
+.module-btn:hover {
+    background: rgba(245, 196, 0, 0.1);
+    border-color: var(--nasa-gold);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hex-icon {
+    font-size: 2rem;
+    color: var(--nasa-gold);
+    margin-bottom: 10px;
+}
+
+@keyframes rotateSlowlyCenter {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.intro-info {
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 3px solid var(--nasa-gold);
+}
+
+/* Section Transitions */
+section {
+    padding: 100px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--nasa-gold);
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    text-shadow: 0 0 10px rgba(245, 196, 0, 0.4);
+}
+
+/* --- NEW ACADEMIC FACTS SECTION STYLES --- */
+#facts-innovations {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 80px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.facts-content.academic-style {
+    max-width: 1000px;
+    margin: 0 auto;
+    column-count: 2;
+    /* Create an academic dual-column feel */
+    column-gap: 40px;
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: justify;
+    text-shadow: 1px 1px 2px black;
+}
+
+.facts-content p {
+    margin-bottom: 30px;
+}
+
+/* --- UPDATED TIME-MACHINE SECTION --- */
+
+/* Comparison Slider (Much larger) */
+.comparison-slider {
+    position: relative;
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    aspect-ratio: 16 / 9;
+    border: 2px solid var(--nasa-gold);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px rgba(245, 196, 0, 0.2);
+}
+
+/* Positioning labels on the slider */
+.slider-label {
+    position: absolute;
+    top: 5px;
+    /* Stick to the top edge */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px 12px;
+    border-radius: 8px;
+    z-index: 12;
+    /* Above everything but maybe the slider button */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+    /* Make labels transparent to clicks so slider still works */
+    opacity: 1;
+    /* Initial state, will be updated by JS */
+}
+
+/* Specific position for each label */
+.left-label {
+    left: 5px;
+}
+
+.right-label {
+    right: 5px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    /* JS controls this */
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.image-overlay img,
+.image-base img {
+    width: 1400px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    z-index: 10;
+    margin: 0;
+}
+
+.detailed-comparison-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    width: 95%;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--nasa-gold);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.comparison-card-title {
+    color: var(--nasa-gold);
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px rgba(245, 196, 0, 0.4);
+}
+
+/* Grid layout for comparison */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 2.5fr;
+    /* 3 columns for category, Hubble, Webb */
+    gap: 15px;
+}
+
+.grid-row {
+    display: contents;
+    /* Ensures the row acts as an implicit cell container */
+}
+
+.grid-cell {
+    padding: 20px;
+    color: #cbd5e1;
+    line-height: 1.8;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Row hover highlight */
+.grid-row:hover .grid-cell {
+    background: rgba(245, 196, 0, 0.08);
+    transform: scale(1.02);
+}
+
+/* Specific styling for cell types */
+.grid-header {
+    font-weight: bold;
+    color: var(--nasa-gold);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.grid-cell.category {
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    text-align: center;
+    border-left: 2px solid var(--nasa-gold);
+}
+
+.grid-cell.hubble {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.grid-cell.webb {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- OTHER SECTION STYLES --- */
+.scroll-mission {
+    position: relative;
+    height: 350vh;
+    /* Increased from 200vh. This requires more scrolling, effectively slowing the rocket down! */
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Updated Earth Image */
+.planet.earth-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(43, 130, 201, 0.6);
+    background: transparent;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+.mission-track {
+    position: relative;
+    width: 4px;
+    height: 80%;
+    background: rgba(245, 196, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.jwst-icon {
+    position: absolute;
+    top: 0;
+    font-size: 2rem;
+    z-index: 15;
+    transition: transform 0.1s ease-out;
+}
+
+.milestone {
+    position: absolute;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
+}
+
+.milestone:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Positions the text on the right side of the track */
+.right-side {
+    left: 100%;
+    margin-left: 40px;
+    flex-direction: row;
+}
+
+/* Positions the text on the left side of the track */
+.left-side {
+    right: 100%;
+    margin-right: 40px;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Connecting lines to the track */
+.right-side::before,
+.left-side::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: var(--nasa-gold);
+    opacity: 0.5;
+}
+
+.right-side::before {
+    left: -40px;
+}
+
+.left-side::before {
+    right: -40px;
+}
+
+.timestamp {
+    background: var(--nasa-gold);
+    color: black;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    box-shadow: 0 0 10px rgba(245, 196, 0, 0.4);
+}
+
+.milestone-fact {
+    background: rgba(11, 13, 23, 0.8);
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.milestone-fact h4 {
+    margin: 0 0 8px 0;
+    color: var(--nasa-gold);
+    font-size: 1.1rem;
+}
+
+.milestone-fact p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.planet.earth {
+    width: 60px;
+    height: 60px;
+    background: #2b82c9;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(43, 130, 201, 0.5);
+}
+
+.target-point {
+    width: 80px;
+    height: 60px;
+    border: 2px dashed var(--nasa-gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--nasa-gold);
+}
+
+#discovery-gallery {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+\/* --- L2 Specific Grid Layout --- */ .l2-card {
+    position: relative;
+    z-index: 20;
+    /* Ensures the card sits on top of the moving track and stars */
+    margin-top: 50px;
+}
+
+.comparison-grid.l2-grid {
+    /* Changes from 3 columns to 2 columns specifically for the L2 section */
+    grid-template-columns: 1fr 3fr;
+}
+
+.discovery-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    width: 320px;
+    border-radius: 20px;
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.discovery-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--nasa-gold);
+}
+
+.discovery-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--nasa-gold);
+    color: black;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.details-pane {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0 15px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.details-pane.active {
+    max-height: 250px;
+    /* Expands to show text */
+    padding: 15px;
+}
+
+.card-image {
+    position: relative;
+    /* Essential for the 'discovery-tag' to stay inside */
+    width: 100%;
+    height: 200px;
+    /* Gives the image container a fixed height */
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This crops the image to fill the 200px area without stretching */
+    display: block;
+}
+
+.discovery-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--nasa-gold);
+    color: black;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 5;
+    /* Ensures the tag stays on top of the image */
+}
+
+/* --- SUBPAGE SPECIFIC STYLES (Article Layout) --- */
+
+.subpage-nav {
+    padding: 20px 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-btn:hover {
+    color: var(--nasa-gold);
+}
+
+.subpage-hero {
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid rgba(245, 196, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.article-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 100px 20px;
+}
+
+.article-hero-image {
+    width: 100%;
+    margin-bottom: 50px;
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background: black;
+}
+
+.article-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.caption {
+    padding: 15px;
+    text-align: center;
+    color: #cbd5e1;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.article-section {
+    margin-bottom: 60px;
+    color: #cbd5e1;
+    font-size: 1.15rem;
+    line-height: 1.8;
+
+    min-height: auto;
+    padding: 20px 0;
+    /* display: block; */
+}
+
+.article-section p {
+    margin-bottom: 20px;
+}
+
+/* Darker panel for tech section */
+.dark-panel {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 4px solid var(--nasa-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tech-card h3 {
+    color: var(--nasa-gold);
+    margin-top: 0;
+    border-bottom: 1px solid rgba(245, 196, 0, 0.2);
+    padding-bottom: 10px;
+}
+
+.fact-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.fact-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.fact-list li::before {
+    content: '⬢';
+    color: var(--nasa-gold);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 0.9rem;
+}
+
+.gallery-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.gallery-item {
+    border: 1px solid rgba(245, 196, 0, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    background: black;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    display: block;
+}
+
+.references-section {
+    max-width: 1000px;
+    margin: 60px auto 40px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 2px solid var(--nasa-gold);
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.references-section h2 {
+    color: var(--nasa-gold);
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.apa-citation {
+    padding-left: 2em;
+    text-indent: -2em;
+    margin-bottom: 15px;
+    word-wrap: break-word;
+}
+
+.apa-citation i {
+    color: white;
+}

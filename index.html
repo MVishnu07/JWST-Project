@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWST - Mission Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="star-container"></div>
+
+    <header id="hero-control">
+        <img src="res/JWST.png" alt="JWST Deployed" class="hero-image-deploy">
+
+        <div class="hero-content">
+            <h1 class="main-title">Exploring the Hidden Universe :</h1>
+            <h1 class="main-title"> James Webb Space Telescope </h1>
+            <p class="tagline">Mission Status: 1.5 Million KM from Earth. Ready to explore?</p>
+
+            <div class="intro-info">
+                <p>The James Webb Space Telescope is humanity's most advanced infrared observatory. By peering through
+                    cosmic dust, it reveals the earliest galaxies, the birth of stars, and the atmospheres of distant
+                    worlds. Select a module below to begin your mission.</p>
+            </div>
+
+            <div class="mission-modules">
+                <a href="#facts-innovations" class="module-btn">
+                    <span class="hex-icon">⬢</span>
+                    <span>Mission Facts</span>
+                </a>
+                <a href="#mirror-lab" class="module-btn">
+                    <span class="hex-icon">⬢</span>
+                    <span>The Time Machine</span>
+                </a>
+                <a href="#mission-orbit" class="module-btn">
+                    <span class="hex-icon">⬢</span>
+                    <span>The Journey to L2</span>
+                </a>
+                <a href="#discovery-gallery" class="module-btn">
+                    <span class="hex-icon">⬢</span>
+                    <span>Cosmic Discoveries</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="facts-innovations">
+        <h2 class="section-title">JWST Facts & Innovations</h2>
+        <div class="facts-content academic-style">
+            <p>The James Webb Space Telescope represents the pinnacle of decades of space engineering and international
+                cooperation. Its scale and ambition required a series of technological breakthroughs to make its complex
+                deployment and ultra-sensitive measurements possible. To observe the infrared light from the earliest,
+                most distant stars and galaxies, it must maintain a temperature of under 50 Kelvin (-370°F), achieved
+                only through its location at the Second Lagrange Point (L2) and a massive, passive cooling sunshield.
+                Its
+                sunshield, made of five layers of a specialized material called Kapton, is as thin as a human hair and
+                coated with aluminum and silicon to deflect heat. It had to be folded precisely for launch and deployed
+                in space with a complex sequence of hundreds of single point of failure steps. The complexity of its
+                deployment was one of the most significant engineering challenges in history. The sheer ingenuity of its
+                sunshield has been a focus of extensive technical review and admiration within the astronomical
+                community.</p>
+            <p> Webb's mirror is a marvel of material science and technical alignment. The primary mirror of JWST is 6.5
+                meters (21.3 feet) in diameter, giving it a collecting area roughly six times larger than that of the
+                Hubble Space Telescope. To fit inside a launch vehicle, the mirror was made of 18 hexagonal
+                segments, which unfolded in space and can be actively aligned to act as a single, flawless mirror with
+                nanometer precision. The primary mirror uses precise actuators to shape its segments into the correct
+                geometry. Each segment is made of beryllium, a lightweight, strong, and exceptionally stable material
+                across a wide range of temperatures making it an ideal choice for a cryogenic telescope. To enhance its
+                ability to reflect infrared light, the mirror segments are coated with a layer of gold just 100
+                nanometers thick (about 1/1000th the thickness of a human hair) for optical excellence across the
+                spectrum.</p>
+            <p> Peering from its stable orbit at L2, where it orbits the Sun in synchrony with Earth while staying well
+                away from the Earth's thermal glow, Webb is a "Time Machine" unlike any before it. The detectors on JWST
+                can detect light from objects formed shortly after the Big Bang, which has traveled across billions of
+                years, stretching into infrared wavelengths due to the expansion of the universe a phenomenon known as
+                cosmological redshift. Webb can peer through dense clouds of dust that obscure optical light to witness
+                stellar nurseries in spectacular detail, revealing hidden "protostellar jets" and young stars that have
+                been previously invisible to us. By observing the faint chemical fingerprints in the atmospheres of
+                distant exoplanets as they transit in front of their parent stars, Webb is poised to revolutionize our
+                understanding of planetary systems and perhaps provide clues to the existence of habitable environments
+                beyond our solar system.</p>
+        </div>
+    </section>
+
+    <section id="mirror-lab">
+        <h2 class="section-title">Seeing the Invisible through Cosmic Dust</h2>
+
+        <div class="comparison-slider large-slider">
+            <div class="slider-label left-label">JWST Image</div>
+            <div class="slider-label right-label">Hubble Image</div>
+
+            <div class="image-overlay" id="webb-image">
+                <img src="res/webb_carina.png" alt="Webb Cosmic Cliffs">
+            </div>
+
+            <div class="image-base" id="hubble-image">
+                <img src="res/hubble_carina.jpg" alt="Hubble Carina Nebula">
+            </div>
+
+            <input type="range" min="0" max="100" value="50" class="slider" id="mirror-range">
+            <div class="slider-button"></div>
+        </div>
+
+        <div class="detailed-comparison-card">
+            <h3 class="comparison-card-title">Science Deep Dive: Hubble vs. Webb</h3>
+
+            <div class="comparison-grid">
+                <div class="grid-row grid-header">
+                    <div class="grid-cell category">Category</div>
+                    <div class="grid-cell hubble">Hubble Space Telescope</div>
+                    <div class="grid-cell webb">James Webb Space Telescope</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Optical System</div>
+                    <div class="grid-cell hubble">Hubble features a single 2.4-meter monolithic mirror made of ULE
+                        (Ultra Low Expansion) glass. This size limits its light-collecting power compared to Webb but
+                        was a major advance for its era, allowing for high-resolution images across a specific range.
+                        Its detectors were optimized for seeing clearly from the UV to the near-infrared, providing
+                        spectacular views of the visible universe.</div>
+                    <div class="grid-cell webb">Webb uses an innovative 18-segment primary mirror, 6.5 meters in
+                        diameter, with roughly six times the light-gathering area of Hubble. The mirror is made of
+                        lightweight beryllium segments that actively aligned and shaped with nanometer precision. A
+                        layer of pure gold enhances its ability to reflect and detect the very faint, stretched infrared
+                        light from the earliest, most distant objects in the cosmic dawn.</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Wavelength Coverage</div>
+                    <div class="grid-cell hubble">Hubble is primarily an ultraviolet-visible telescope, designed to
+                        observe light from 0.1 to roughly 1.0 micrometers. It can observe high-energy cosmic events in
+                        the UV and the primary light output from stars like our Sun. It can only see into the very
+                        beginning of the near-infrared spectrum, which limits its ability to see through thick cosmic
+                        dust clouds.</div>
+                    <div class="grid-cell webb">Webb is specifically optimized for near- and mid-infrared light,
+                        covering wavelengths from 0.6 to 28.5 micrometers. This is a crucial distinction. Infrared light
+                        is special because it can pass through dense dust, revealing stellar nurseries and distant
+                        worlds. Its optimized instruments allow it to peer through dust to see protostellar jets and the
+                        first stars and galaxies. Webb can detect light that has traveled billions of years, stretching
+                        into infrared wavelengths.</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Orbit & Environment</div>
+                    <div class="grid-cell hubble">Hubble orbits Earth in a low-Earth orbit (LEO), approximately 550 km
+                        above the surface. While a powerful position outside the atmosphere, this location poses
+                        distinct limitations. The Earth obscures its view and reflects heat and light, requiring it to
+                        constantly re-orient and preventing the stable, ultra-cold conditions needed for mid-infrared
+                        sensing. Maintaining the Cold is critical for mid-infrared detectors.</div>
+                    <div class="grid-cell webb">Webb resides at Lagrange Point 2 (L2), a gravitationally stable location
+                        1.5 million km from Earth, always on the far side of Earth relative to the Sun. From this
+                        advantageous spot, a tennis-court-sized, five-layer sunshield blocks heat from the Sun, Earth,
+                        and Moon. Its optimized spot enables optimal observations. By isolating itself from thermal
+                        pollution and maintaining an almost consistent temperature of 50K, its instruments reach
+                        unprecedented levels of sensitivity, necessary to see the faintest hints of cosmic dawn.</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Science Scope</div>
+                    <div class="grid-cell hubble">Hubble's diverse and iconic mission scope includes determining the
+                        rate of expansion of the universe (the Hubble Constant), providing stunning views of planetary
+                        nebulae, and capturing the first extremely deep field images to view ancient galaxies, though it
+                        has limitations for cosmological distances. Its detectors are effective but face limits on
+                        distant star formation. It gave us a definitive look at the current-day universe.</div>
+                    <div class="grid-cell webb">Webb is a "First Light" machine, designed specifically to peer into the
+                        past to witness the epoch of the first stars and galaxies, a cosmic objective shared by NASA and
+                        ESA. It can determine the composition of exoplanet atmospheres, penetration of dust to see deep
+                        into star nurseries, and analysis of galaxies as they were just 200-400 million years after the
+                        Big Bang. Using specific cryogenic cooling, MIRI is optimized for even lower temperatures,
+                        enabling Webb to truly peer through dust to see proto-stellar jets and the first stars. Its
+                        detectors and specific composition allows it to reach these ambitious goals.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mission-orbit" class="scroll-mission">
+        <h2 class="section-title">The Journey to L2</h2>
+
+        <div class="mission-track">
+            <div class="earth-marker">
+                <p>Earth (Launch)</p>
+                <img src="res/Earth.png" alt="Earth" class="planet earth-img">
+            </div>
+
+            <div class="milestone right-side" style="top: 15%;">
+                <div class="timestamp">T+12 Hours</div>
+                <div class="milestone-fact">
+                    <h4>Mid-Course Correction</h4>
+                    <p>Webb fires its thrusters for the first crucial trajectory correction toward its destination.</p>
+                </div>
+            </div>
+
+            <div class="milestone left-side" style="top: 40%;">
+                <div class="timestamp">Day 3</div>
+                <div class="milestone-fact">
+                    <h4>Sunshield Deployment</h4>
+                    <p>The massive, tennis-court-sized sunshield begins unfolding to cool the sensitive instruments.</p>
+                </div>
+            </div>
+
+            <div class="milestone right-side" style="top: 65%;">
+                <div class="timestamp">Day 14</div>
+                <div class="milestone-fact">
+                    <h4>Mirror Unfolding</h4>
+                    <p>The final golden side panels of the primary mirror lock into their permanent positions.</p>
+                </div>
+            </div>
+
+            <div class="milestone left-side" style="top: 90%;">
+                <div class="timestamp">Day 29</div>
+                <div class="milestone-fact">
+                    <h4>Arrival at L2</h4>
+                    <p>Webb safely inserts itself into its final halo orbit around the 2nd Lagrange point.</p>
+                </div>
+            </div>
+
+            <div id="jwst-traveler" class="jwst-icon">
+                🚀
+            </div>
+
+            <div class="l2-marker">
+                <div class="target-point">L2</div>
+                <p>Lagrange Point 2 (1.5 Million km)</p>
+            </div>
+        </div>
+
+        <div class="detailed-comparison-card l2-card">
+            <h3 class="comparison-card-title">Why Lagrange Point 2?</h3>
+
+            <p style="color: #cbd5e1; text-align: center; margin-bottom: 30px; font-size: 1.1rem; line-height: 1.6;">
+                The James Webb Space Telescope's destination, Lagrange Point 2 (L2), is not just a random spot in space;
+                it is an absolute necessity for the mission's survival and scientific success. Located roughly 1.5
+                million kilometers (about 1 million miles) from Earth, L2 is one of five unique points in our solar
+                system where gravity creates a perfect cosmic parking spot.
+            </p>
+
+            <div class="comparison-grid l2-grid">
+                <div class="grid-row grid-header">
+                    <div class="grid-cell category">Mission Requirement</div>
+                    <div class="grid-cell webb">The L2 Advantage</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Thermal Isolation</div>
+                    <div class="grid-cell webb">Webb's primary mission is to detect incredibly faint infrared light.
+                        Because infrared is essentially heat radiation, the telescope's instruments must be kept near
+                        absolute zero—under 50 Kelvin (-370°F). If Webb were in low-Earth orbit like Hubble, the massive
+                        heat radiating from the Earth, Moon, and Sun would blind its sensitive cameras. At L2, the Sun,
+                        Earth, and Moon are always located in the exact same direction. This specific geometry allows
+                        Webb's tennis-court-sized sunshield to block all three heat sources simultaneously, providing
+                        permanent, passive cryogenic cooling.</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Gravitational Balance & Orbit</div>
+                    <div class="grid-cell webb">L2 is created by the interacting gravitational pulls of the Sun and
+                        Earth balancing the centripetal force required for a spacecraft to move with them. However, L2
+                        is slightly unstable—like trying to balance a ball on top of a dome. Webb doesn't sit exactly
+                        *at* L2; instead, it flies in a large "halo orbit" *around* the invisible L2 point, completing a
+                        slow loop every six months. This specific orbit requires very little fuel to maintain, needing
+                        just brief thruster pulses every three weeks. This incredible fuel efficiency is why Webb's
+                        lifespan is projected to exceed 10 to 20 years.</div>
+                </div>
+
+                <div class="grid-row">
+                    <div class="grid-cell category">Unobstructed Cosmic View</div>
+                    <div class="grid-cell webb">Orbiting L2 provides an unparalleled, continuous view of the deep
+                        cosmos. Telescopes in Earth orbit frequently have their targets blocked by the Earth itself as
+                        they circle the planet every 90 minutes, leading to interrupted observations and constantly
+                        fluctuating thermal environments. From its vantage point 1.5 million kilometers away, Webb can
+                        lock onto deep space targets for extended periods without any planetary interruption,
+                        continuously gathering the precious photons needed to image the first galaxies born right after
+                        the Big Bang.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="discovery-gallery">
+        <h2 class="section-title">Cosmic Discoveries</h2>
+        <div class="gallery-container">
+            <a href="jades.html" style="text-decoration: none; color: inherit;">
+                <div class="discovery-card">
+                    <div class="card-image">
+                        <img src="https://assets.science.nasa.gov/content/dam/science/missions/webb/science/2025/03/STScI-01JPSTZ9JA4WPCEFNCW38NMJEP.png"
+                            alt="Earliest Galaxy">
+                        <div class="discovery-tag">Oldest Galaxy</div>
+                    </div>
+                    <div class="card-brief">
+                        <h3>JADES-GS-z13-0</h3>
+                        <p>We are looking at a baby galaxy from 13.4 billion years ago!</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="cosmic-cliffs.html" style="text-decoration: none; color: inherit;">
+                <div class="discovery-card">
+                    <div class="card-image">
+                        <img src="res/webb_carina.png" alt="Cosmic Cliffs">
+                        <div class="discovery-tag">Star Nursery</div>
+                    </div>
+                    <div class="card-brief">
+                        <h3>The Cosmic Cliffs</h3>
+                        <p>See those "mountains"? They are actually giant clouds of gas where stars are born!</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="wasp96b.html" style="text-decoration: none; color: inherit;">
+                <div class="discovery-card">
+                    <div class="card-image">
+                        <img src="res/WASP.png" alt="Exoplanet Spectrum">
+                        <div class="discovery-tag">Alien Air</div>
+                    </div>
+                    <div class="card-brief">
+                        <h3>WASP-96 b</h3>
+                        <p>Webb "sniffed" the air here and found signs of water vapor!</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section class="references-section">
+        <h2>References</h2>
+        <div class="apa-citation">
+            Gardner, J. P., Mather, J. C., Clampin, M., Doyon, R., Greenhouse, M. A., Hammel, H. B., ... & Wright, G. S.
+            (2006). The James Webb Space Telescope. <i>Space Science Reviews</i>, 123(4), 485-606.
+            https://doi.org/10.1007/s11214-006-8315-7
+        </div>
+        <div class="apa-citation">
+            NASA. (n.d.). <i>Observatory - Orbit</i>. James Webb Space Telescope. Retrieved April 17, 2026, from
+            https://webb.nasa.gov/content/about/orbit.html
+        </div>
+        <div class="apa-citation">
+            Space Telescope Science Institute. (n.d.). <i>Webb vs. Hubble Telescope</i>. WebbTelescope.org. Retrieved
+            April 17, 2026, from https://webbtelescope.org/webb-science/the-observatory/webb-vs-hubble
+        </div>
+    </section>
+
+    <script src="action.js"></script>
+</body>
+
+</html>
