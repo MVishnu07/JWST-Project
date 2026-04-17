@@ -362,7 +362,6 @@ section {
     font-size: 2rem;
     z-index: 15;
     transition: transform 0.1s ease-out;
-    rotate: 135deg; 
 }
 
 .milestone {
