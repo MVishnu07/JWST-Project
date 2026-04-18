@@ -1,3 +1,4 @@
+
 const slider = document.getElementById('mirror-range');
 const webbImage = document.getElementById('webb-image');
 const jwstLabel = document.querySelector('.large-slider .left-label');
@@ -5,8 +6,9 @@ const hubbleLabel = document.querySelector('.large-slider .right-label');
 
 if (slider && webbImage && jwstLabel && hubbleLabel) {
     slider.addEventListener('input', (e) => {
-        const value = e.target.value; 
+        const value = e.target.value; // 0 to 100
         webbImage.style.width = `${value}%`;
+
 
         jwstLabel.style.opacity = Math.max(0, (value - 10) / 40);
 
@@ -16,7 +18,7 @@ if (slider && webbImage && jwstLabel && hubbleLabel) {
 
 function createStars() {
     const container = document.getElementById('star-container');
-    if (!container) return; 
+    if (!container) return;
 
     const starCount = 200;
 
@@ -59,10 +61,11 @@ window.addEventListener('scroll', () => {
 
     if (missionSection && jwst && track) {
         const targetScreenY = window.innerHeight * 0.4;
-        
+
         const trackRect = track.getBoundingClientRect();
 
         let rocketY = targetScreenY - trackRect.top;
+
         const l2Height = l2Marker ? l2Marker.offsetHeight : 60;
         const maxTravel = track.offsetHeight - l2Height + 10;
 
@@ -71,7 +74,6 @@ window.addEventListener('scroll', () => {
         jwst.style.transform = `translateY(${rocketY}px)`;
     }
 });
-
 function toggleDetails(id) {
     const pane = document.getElementById(id);
     pane.classList.toggle('active');
