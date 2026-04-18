@@ -54,18 +54,21 @@ window.addEventListener('load', () => {
 window.addEventListener('scroll', () => {
     const missionSection = document.getElementById('mission-orbit');
     const jwst = document.getElementById('jwst-traveler');
+    const track = document.querySelector('.mission-track');
+    const l2Marker = document.querySelector('.l2-marker');
 
-    if (missionSection && jwst) {
-        const sectionRect = missionSection.getBoundingClientRect();
-        const sectionTop = sectionRect.top;
-        const sectionHeight = sectionRect.height;
+    if (missionSection && jwst && track) {
+        const targetScreenY = window.innerHeight * 0.4;
+        
+        const trackRect = track.getBoundingClientRect();
 
-        let progress = -sectionTop / (sectionHeight - window.innerHeight);
+        let rocketY = targetScreenY - trackRect.top;
+        const l2Height = l2Marker ? l2Marker.offsetHeight : 60;
+        const maxTravel = track.offsetHeight - l2Height + 10;
 
-        progress = Math.max(0, Math.min(1, progress));
+        rocketY = Math.max(0, Math.min(maxTravel, rocketY));
 
-        const trackHeight = missionSection.querySelector('.mission-track').offsetHeight;
-        jwst.style.transform = `translateY(${progress * (trackHeight - 40)}px)`;
+        jwst.style.transform = `translateY(${rocketY}px)`;
     }
 });
 
